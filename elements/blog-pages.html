@@ -1,0 +1,56 @@
+<link rel="import" href="../bower_components/app-route/app-route.html">
+<link rel="stylesheet" type="text/css" href="../bower_components/materialize/bin/materialize.css">
+<script src="../bower_components/materialize/bin/materialize.js"></script>
+
+<link rel="import" href="header-image.html">
+<link rel="import" href="article-title.html">
+<link rel="import" href="markdown-page.html">
+
+<dom-module id="blog-pages">
+
+    <template>
+
+<style>
+    header-image {
+        position: absolute;
+        width: 100%;
+        
+    }
+
+    #spacer {
+        background-color: transparent;
+        width: 100%;
+        height: 565px;
+    }
+
+</style>
+
+    <app-route route="{{route}}"
+       pattern="/:slug"
+       active="{{postsActive}}"
+       data="{{postsData}}"></app-route>
+
+    <article-title
+        post="{{postsData.slug}}"
+        active="{{postsActive}}"></article-title>
+
+        <header-image
+            post="{{postsData.slug}}"
+            active="{{postsActive}}"></header-image> 
+
+        <div id="spacer"></div>    
+
+    <markdown-page
+        post="{{postsData.slug}}"
+        active="{{postsActive}}"></markdown-page>  
+
+</div>
+    </template>
+
+    <script>
+        Polymer({
+            'is': 'blog-pages',
+        });
+    </script>
+
+</dom-module>

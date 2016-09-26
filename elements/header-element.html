@@ -1,0 +1,93 @@
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../bower_components/app-layout/app-header/app-header.html">
+<link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
+<link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
+
+<dom-module id="header-element">
+    <template>
+        
+        <style>
+
+            app-header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                font-family: "Ubuntu Mono";
+                color: #fff;
+
+                
+                --app-header-background-front-layer: {
+                    background-color: transparent;
+                };
+
+                /*
+                background-color: #f45832;
+                */
+                --app-header-background-rear-layer: {
+                    background-color: rgba(50, 50, 50, 1);
+                };
+            }
+
+        </style>
+
+        <app-header condenses fixed effects="parallax-background blend-background waterfall">
+          <app-toolbar>
+          <paper-icon-button icon="menu" on-tap='toggleLeft'></paper-icon-button>
+          <div spacer main-title>Codin' For The Hack Of It</div>
+          <div title=""></div>
+          </app-toolbar>
+          <app-toolbar></app-toolbar>
+          <app-toolbar></app-toolbar>
+          <app-toolbar></app-toolbar>
+          <app-toolbar></app-toolbar>
+          <app-toolbar></app-toolbar>
+          <app-toolbar></app-toolbar>
+          <app-toolbar></app-toolbar>
+        </app-header>
+
+        <iron-ajax
+          auto
+          url="[[_computeURL()]]"
+          handle-as="json"
+          loading="{{loading}}"
+          last-response="{{postContent}}"></iron-ajax>
+
+<!--         
+         <img src="[[postContent.img]]" alt="[[postContent.img_alt]]" />
+-->                      
+
+    </template>
+
+    <script>
+        Polymer({
+
+            'is': 'header-element',
+
+            'properties': {
+
+                'active': {
+                    'type': Boolean,
+                    'value': false,
+                    'reflectToAttribute': true
+                },
+
+                'loading': {
+                    'type': Boolean,
+                    'value': false,
+                    'notify': true
+                }
+            },
+
+            '_computeURL': function() {
+                return `data/articles/data_map.json`;
+            },          
+            'toggleLeft': function() {
+                var drawer = document.querySelector('app-drawer');
+                drawer.toggle();
+            }                               
+        });
+    </script>
+</dom-module>

@@ -1,0 +1,80 @@
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../bower_components/marked-element/marked-element.html">
+
+<link rel="import" href="code-sample.html">
+
+<dom-module id="markdown-page">
+    <template>
+    <style>
+        #content {
+            color: black;
+            background-color: white;
+            margin: 0;
+            margin-left:75px;
+            margin-right:75px;
+        }
+        h1 {
+            margin: 0px 0px 15px 0px;
+        }
+        ul {
+            padding: 20px 60px;
+            margin: 0px 50px;
+            border-radius: .8em;
+            background-color: rgb(245, 245, 245);
+            border-width: 1px 5px 5px 1px;
+            border-color: #000;
+            border-style: solid;
+        }
+        blockquote {
+            padding: 20px 90px;
+            margin: 0px 50px; 
+            font-size: 20px;
+            font-style: italic;
+        }
+        p {
+            text-indent: 1em;
+        }
+    </style>
+
+        <iron-ajax
+          auto
+          url="[[_computeURL(post)]]"
+          handle-as="text"
+          loading="{{loading}}"
+          last-response="{{postContent}}"></iron-ajax>
+
+        <div id=content>
+        <prism-highlighter></prism-highlighter>
+		<marked-element markdown=[[postContent]]>
+		<div class="markdown-html"></div>
+		</marked-element>
+        </div>
+
+    </template>
+
+    <script>
+        Polymer({
+
+            'is': 'markdown-page',
+
+            'properties': {
+
+                'active': {
+                    'type': Boolean,
+                    'value': false,
+                    'reflectToAttribute': true
+                },
+
+                'loading': {
+                    'type': Boolean,
+                    'value': false,
+                    'notify': true
+                }
+            },
+
+            '_computeURL': function(post) {
+                return `data/articles/markdown/${post}.md`;
+            }
+        });
+    </script>
+</dom-module>

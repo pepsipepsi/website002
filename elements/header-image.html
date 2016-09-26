@@ -1,0 +1,53 @@
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../bower_components/iron-image/iron-image.html">
+<link rel='stylesheet' href='../bower_components/animate.css/animate.css'>
+<link rel="stylesheet" type="text/css" href="../bower_components/materialize/bin/materialize.css">
+<script src="../bower_components/materialize/bin/materialize.js"></script>
+
+<dom-module id="header-image">
+    <template>
+        
+
+        <iron-ajax
+          auto
+          url="[[_computeURL()]]"
+          handle-as="json"
+          loading="{{loading}}"
+          last-response="{{postContent}}"></iron-ajax>
+
+
+  <div class="parallax-container">
+    <div class="parallax">
+      <img src="[[_getSrc(postContent, post)]]" alt="[[_getAlt(postContent, post)]]" class="my-image animated fadeIn">
+    </div>
+  </div>
+
+    </template>
+
+    <script>
+        Polymer({
+
+            'is': 'header-image',
+
+            'properties': {
+
+                'active': {
+                    'type': Boolean,
+                    'value': false,
+                    'reflectToAttribute': true
+                }
+            },
+
+            '_computeURL': function() {
+                return `data/articles/data_map.json`;
+            },
+
+            '_getSrc': function(content, post) {
+                return content[post].img;
+            },
+            '_getAlt': function(content, post) {
+                return content[post].img_alt;
+            }
+        });
+    </script>
+</dom-module>

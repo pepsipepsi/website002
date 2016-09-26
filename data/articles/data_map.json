@@ -1,0 +1,74 @@
+{
+	"article003": 
+	{
+		"title": "First Post",
+		"img": "images/post3.jpeg",
+		"img_alt": "The third post image"
+	},	
+	"article006":
+	{
+		"title": "CSS Centering Techniques",
+		"img": "images/post4.jpeg",
+		"img_alt": "The fourth post image"
+	},
+	"article007":
+	{
+		"title": "ES6 Overview",
+		"img": "images/post5.jpeg",
+		"img_alt": "The fifth post image"
+	},
+	"article008":
+	{
+		"title": "ES6 Arrow Functions",
+		"img": "images/deep.jpg",
+		"img_alt": "The sixth post image"
+	},
+	"article009":
+	{
+		"title": "ES6 Rest And Spread",
+		"img": "images/sky.jpg",
+		"img_alt": "The seventh post image"
+	},
+	"article010":
+	{
+		"title": "ES6 Templates",
+		"img": "images/post8.jpeg",
+		"img_alt": "The eighth post image"
+	},
+	"article011":
+	{
+		"title": "Android Apps On Chromebooks",
+		"img": "images/huelgoat.jpg",
+		"img_alt": "The ninth post image"
+	},
+	"article012":
+	{
+		"title": "Remix OS",
+		"img": "images/ocean.jpg",
+		"img_alt": "The eighth post image"
+	},
+	"article013":
+	{
+		"title": "The JavaFX Platform",
+		"img": "images/bg4.jpg",
+		"img_alt": "The eighth post image"
+	},
+	"article014":
+	{
+		"title": "Presenting Kotlin",
+		"img": "images/kotlin.jpg",
+		"img_alt": "The eighth post image"
+	},
+	"article015":
+	{
+		"title": "Dart Language",
+		"img": "images/jungle.jpg",
+		"img_alt": "The eighth post image"
+	},	
+	"article016":
+	{
+		"title": "The Polymer Library",
+		"img": "images/gears.jpg",
+		"img_alt": "The eighth post image"
+	}
+}
