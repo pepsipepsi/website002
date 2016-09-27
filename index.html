@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
+
     <style>
     body {
     	margin:0;
@@ -16,22 +18,19 @@
 
     <body>
     <script>
+
     $(document).ready(function(){
       $('.parallax').parallax();
     });
-    </script>
-
-
-    <script>
-     
+    
     function animate(element_ID, animation) {
         $(element_ID).addClass(animation);
         var wait = window.setTimeout( function(){
             $(element_ID).removeClass(animation)}, 500
         );
     }
-    </script>
 
+    </script>
 
         <blog-app></blog-app>
     </body>

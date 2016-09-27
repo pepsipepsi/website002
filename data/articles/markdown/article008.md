@@ -1,6 +1,6 @@
 # ES6 Arrow Functions
 
-> You have to relax when you're shooting an arrow. You can't be tense. And that just helps, in your day-to-day life.
+> You have to relax when you're shooting an arrow.
 
 > ~ Stephen Amell
 

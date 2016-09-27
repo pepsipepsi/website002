@@ -45,30 +45,36 @@
 	{
 		"title": "Remix OS",
 		"img": "images/ocean.jpg",
-		"img_alt": "The eighth post image"
+		"img_alt": "The tenth post image"
 	},
 	"article013":
 	{
 		"title": "The JavaFX Platform",
 		"img": "images/bg4.jpg",
-		"img_alt": "The eighth post image"
+		"img_alt": "The eleventh post image"
 	},
 	"article014":
 	{
 		"title": "Presenting Kotlin",
 		"img": "images/kotlin.jpg",
-		"img_alt": "The eighth post image"
+		"img_alt": "The twelfth post image"
 	},
 	"article015":
 	{
 		"title": "Dart Language",
 		"img": "images/jungle.jpg",
-		"img_alt": "The eighth post image"
+		"img_alt": "The thirteenth post image"
 	},	
 	"article016":
 	{
 		"title": "The Polymer Library",
 		"img": "images/gears.jpg",
-		"img_alt": "The eighth post image"
+		"img_alt": "The fourteenth post image"
+	},
+	"article017":
+	{
+		"title": "A Polymer Website",
+		"img": "images/fog_trees.jpg",
+		"img_alt": "The fifteenth post image"
 	}
 }
