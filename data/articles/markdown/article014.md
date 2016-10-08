@@ -16,26 +16,32 @@ Using a non-nullable type is kind of like declaring something "final" as soon as
 
 With "var", you can change it all you want, but if it's ever possible for it to be null, you have to follow the type declaration with a '?'.
 
-<code-sample code="var mayBeNull: String? = &ldquo;Not Null&rdquo;
-mayBeNull = null // ok" lang="js"></code-sample>
+<pre id="code"><code class="language-css">var mayBeNull: String? = &ldquo;Not Null&rdquo;
+mayBeNull = null // ok
+</code></pre>
 
 This makes it so you always know that a "val" is never null, and that if you're using a "var", if it was declared with a '?', you are required to check it for being null.
 
-<code-sample code="val cantBeNull = if (mayBeNull != null) mayBeNull.length else return" lang="js"></code-sample>
+<pre id="code"><code class="language-javascript">val cantBeNull = if (mayBeNull != null) mayBeNull.length else return
+</code></pre>
 
 It's not like you can't program well in Java and check for null, but separating data from variables highlights a programming pattern that I think is smart.
 
 There's also a special kind of class called "data class", which is for standardizing how to create what you'd call an associative array in php. There is no real equivalent for an associative array in Java.
 
-<code-sample code="data class Point(val x: Double = 0.0, val y: Double = 0.0)" lang="js"></code-sample>
+<pre id="code"><code class="language-javascript">data class Point(val x: Double = 0.0, val y: Double = 0.0)
+</code></pre>
 
 I did a quick example below to show how convenient the data class is and also used a range in my for loop, another nice Kotlin feature.
 
-<code-sample code="import java.util.ArrayList
+<pre id="code"><code class="language-javascript">import java.util.ArrayList
+
 data class Point(val x: Double = 0.0, val y: Double = 0.0)
+
 fun getRandom(): Point {
     return Point(Math.random(), Math.random())
 }
+
 fun main (args: Array<String>){
     var myPoints: ArrayList<Point> = ArrayList()
     for (i in 1..3){
@@ -43,9 +49,11 @@ fun main (args: Array<String>){
     }
     println(myPoints)
 }
+
 /*
 outputs [Point(x=0.5639647226377081, y=0.01687923455020346), Point(x=0.4306149400628524, y=0.6473898070479492), Point(x=0.9762887917296161, y=0.4070312195759277)]
-*/" lang="js"></code-sample>
+*/
+</code></pre>
 
 The first thing that's unique is that there is a data class, but the functions that actually do things are not inside of a class at all. That's the functional style of Kotlin. Here it really contrasts parts of the program that do things and the data class which doesn't do anything at all, it's just a template for containing information.
 
@@ -57,7 +65,7 @@ Firstly, I wanted to use fxml and a WebView in order to load some data that was 
 
 Firstly, the entry point for the program in a class called "Main".
 
-<code-sample code="class Main : Application() {
+<pre id="code"><code class="language-javascript">class Main : Application() {
     @Throws(Exception::class)
     override fun start(primaryStage: Stage) {
         val path = &ldquo;/resources/index.fxml&rdquo;
@@ -66,12 +74,14 @@ Firstly, the entry point for the program in a class called "Main".
         primaryStage.scene = Scene(root, 400.0, 400.0)
         primaryStage.show()
     }
+    
     companion object {
         @JvmStatic fun main(args: Array<String>) {
             Application.launch(Main::class.java)
         }
     }
-}" lang="js"></code-sample>
+}
+</code></pre>
 
 Notice that the val "Path" uses type inference, it doesn't have to be declared a String. The Parent type is for making an element in JavaFX the top level container. The PrimaryStage object is also a JavaFX thing, note that you can set the title field directly, you can't do that in Java.
 
@@ -81,7 +91,7 @@ The part I struggled with is the javaClass.getResource method. For fxml, because
 
 I won't include the fxml because it's lengthy, but it consists of a menu bar at the top, and a WebView component at the bottom, with a fx:id of myWebView, which is referenced in the controller.
 
-<code-sample code="class Controller {
+<pre id="code"><code class="language-javascript">class Controller {
     @FXML
     private var myWebView: WebView = WebView()
     @FXML
@@ -90,7 +100,8 @@ I won't include the fxml because it's lengthy, but it consists of a menu bar at 
         val path = &ldquo;/resources/index.html&rdquo;
         engine.load(javaClass.getResource(path).toString())
     }
-}" lang="js"></code-sample>
+}
+</code></pre>
 
 This file actually gets called by the fxml file where it's referenced in the parent element. The private var was causing problems for me because I had it as a "val", which can't change, so it generated an exception. It must have to do with the variable getting changed when fxml is loaded, which is interesting.
 

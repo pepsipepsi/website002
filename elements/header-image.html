@@ -1,17 +1,12 @@
 <link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
 <link rel="import" href="../bower_components/iron-image/iron-image.html">
-<link rel='stylesheet' href='../bower_components/animate.css/animate.css'>
-
-<link rel="stylesheet" type="text/css" href="../bower_components/materialize/bin/materialize.css">
-<script src="../bower_components/materialize/bin/materialize.js"></script>
-
 
 <dom-module id="header-image">
     <template>
     <style>
       #header-image{
         width: 100%;
-        max-height: 565px;
+        max-height: 530px;
       }
     </style>        
 
@@ -23,12 +18,15 @@
           last-response="{{postContent}}"></iron-ajax>
 
 
-  <div class="parallax-container">
-    <div class="parallax">
+<!--   <div class="parallax-container">
+    <div class="parallax"> -->
+<!--       <img id="header-image" src="[[_getSrc(postContent, post)]]" alt="[[_getAlt(postContent, post)]]" class="my-image animated fadeIn"> -->
       <img id="header-image" src="[[_getSrc(postContent, post)]]" alt="[[_getAlt(postContent, post)]]" class="my-image animated fadeIn">
-    </div>
-  </div>
+<!--     </div>    
+  </div> -->
+  <script>
 
+  </script>
     </template>
 
     <script>

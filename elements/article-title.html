@@ -3,7 +3,6 @@
 <link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
 <link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
 <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Homemade+Apple' type='text/css'>
-<link rel='stylesheet' href='../bower_components/animate.css/animate.css'>
 
 <dom-module id="article-title">
     <template>
@@ -14,19 +13,21 @@
 		    	top: 350px;
           padding-left: 50px
 		    }
-            .article-title {
-              font: 500px 'Homemade Apple', Helvetica, sans-serif;
-              font-size: 64px;
-              color: #fff;
-              animation-duration: 5s;
-              animation-delay: 1s;          
-            }
+
+        .article-title {
+          font: 500px 'Homemade Apple', Helvetica, sans-serif;
+          z-index: 2;
+          font-size: 64px;
+          color: #fff;
+          animation-duration: 5s;
+          animation-delay: 1s;          
+        }
 
         </style>
 
 		<app-toolbar>
 		<div title=""></div>
-		<div class="article-title animated fadeInUp">[[_getTitle(postContent, post)]]</div>
+    <div class="article-title animated fadeInUp">[[_getTitle(postContent, post)]]</div>
 		<div spacer></div>
 		<div spacer></div>
 		</app-toolbar>
@@ -41,7 +42,9 @@
 <!--         
          <img src="[[postContent.img]]" alt="[[postContent.img_alt]]" />
 -->                      
+    <script>
 
+    </script>
     </template>
 
     <script>
@@ -69,10 +72,10 @@
             },
 
             '_getTitle': function(content, post) {
-              animate(".my-image", 'fadeIn');
+              //animate(".my-image", 'fadeIn');
             	console.log('the title is ' + content[post].title);
                 return content[post].title;
-            }                      
+            }                   
         });
     </script>
 </dom-module>

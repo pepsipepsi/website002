@@ -12,7 +12,7 @@ This project is architected pretty simply, basically, it's a LAMP stack running 
 
 This website's purpose is to demonstrate that I know some web development stuff, and that I care about best practices and have the ability to document my thinking on technical topics. On that note, let me give my first ever code example with a brief explanation.
 
-<code-sample code="blockquote, pre {
+<pre id="code"><code class="language-css">blockquote, pre {
     background: pink;
     white-space: pre-wrap;
     word-break: keep-all;
@@ -23,15 +23,18 @@ This website's purpose is to demonstrate that I know some web development stuff,
     border-style: solid;
     color: #000;
 }
+
 blockquote, pre pre {
     background: white;
 }
+
 blockquote {
     font-family: 'Times New Roman';
     font-style: italic;
     margin-left: 60px;
     margin-right: 60px;
-}" lang="css"></code-sample>
+}
+</code></pre>
 
 Like I said previously, I like the idea of dumping my parsed markdown file between some &lt;pre&gt; tags and expecting it to be formatted in a standardized way. Normally in HTML, if you put a bunch of blankspace or special formatting into a block of text, it gets stripped. Conversely, with &lt;pre&gt; tags, it keeps the formatting. This is used constantly when "pretty printing" php arrays directly to HTML for debugging.
 

@@ -6,18 +6,19 @@
 
 I'd have to say that the #1 most frequently misspelled word in Javascript is the word "function". With this new feature, you can basically substitute the word function with =>
 
-<code-sample code="// es5
+<pre id="code"><code class="language-javascript">// es5
 var myAddingFunction = function(arg1, arg2){
     return arg1 + arg2
 }
 console.log(myAddingFunction(3, 5)); //outputs 8
+
 //es6
 var myAddingFunction = (arg1, arg2) => arg1 + arg2;
-console.log(myAddingFunction(4, 5)); //outputs 9" lang="js"></code-sample>
+console.log(myAddingFunction(4, 5)); //outputs 9</code></pre>
 
 Note that the return keyword and the curly braces aren't needed. If the function had more than one line, you would need to include them. Also, if you only have one argument, you can remove the parenthesis as well.
 
-<code-sample code="var myDoublingFunction = arg => arg * 2;" lang="js"></code-sample>
+<pre id="code"><code class="language-javascript">var myDoublingFunction = arg => arg * 2;</code></pre>
 
 
 It's obvious how this can shorten the function definition, but there are other reasons why this is nice (pun intended).

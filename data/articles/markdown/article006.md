@@ -97,8 +97,8 @@ We could simplify that method by using the 'auto' keyword.
 
 <div id="box2" class="demo_css"><div id="circle2"></div></div>
 
-<code-sample code="    margin-left: auto;
-    margin-right: auto;" lang="css"></code-sample>
+<pre id="code"><code class="language-css">    margin-left: auto;
+    margin-right: auto;</code></pre>
 
 And we can shorten that to just be margin: auto; to apply it to all sides. It doesn't actually do it to the top and bottom on all browsers though.
 
@@ -107,34 +107,38 @@ That's great, but what if we want it vertically centered too? You might imagine 
 There is a pretty dumb trick here which accomplishes centering the circle, and it's by making the box a table-cell element.
 
 <div id="box3" class="demo_css"><div id="circle3"></div></div>
-
-<code-sample code="/*added to the box div*/
+<br>
+<pre id="code"><code class="language-css">/*added to the box div*/
     display: table-cell;
     vertical-align: middle;
+
 /*added to the circle div*/
-    margin: auto;</code></pre>" lang="css"></code-sample>
+    margin: auto;</code></pre>
+<br>
 I'd say that's pretty sweet, but doesn't turning divs into table elements just seem like a hack, kind of like what people had to do back in the 90s to section off parts of the document? It just doesn't seem right to call something something it's not - and that box with a circle in it is *not* a table!
-
+<br><br>
 -- Note -- when using "display: table-cell", it also removes your margins. 
-
+<br><br>
 **Flexbox** is the solution to this problem!
-
+<br><br>
 <div id="box4" class="demo_css"><div id="circle4"></div></div>
 
-<code-sample code=".box {
+<pre id="code"><code class="language-css">.box {
     display: flex;
     justify-content: center;
     background: #58a;
 	width: 100px;
 	height: 100px;
 }
+
 .circle {
     background: #fff;
 	width: 50%;
 	height: 50%;
     border-radius: 50%;
     align-self: center;
-}" lang="css"></code-sample>
+}
+</code></pre>
 
 Now what is this, some kind of css library, or some kind of trendy new tool?
 

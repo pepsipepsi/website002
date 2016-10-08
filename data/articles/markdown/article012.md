@@ -18,7 +18,7 @@ As I discovered, you can set up a dual boot alongside Ubuntu as well, which is w
 
 First you need extract the contents of the iso into a dedicated directory, which I called "/remix". The file "system.sfs" needs to be extracted. This is actually a file-system, and you can "unsquash" it with the following command.
 
-<code-sample code="unsquashfs system.sfs" lang="js"></code-sample>
+<pre id="code"><code class="language-javascript">unsquashfs system.sfs</code></pre>
 
 That was kind of neat to learn about, I don't think I've ever seen that file type before. It produces the system.img file which you'll need for your grub menu entry.
 
@@ -28,26 +28,26 @@ The difficult part was adding the menu entry to the grub2 menu. It needs to be j
 
 To edit the grub2 config, run the command below.
 
-<code-sample code="sudo nano /etc/grub.d/40_custom" lang="js"></code-sample>
+<pre id="code"><code class="language-javascript">sudo nano /etc/grub.d/40_custom</code></pre>
 
 Beneath the comment section of the file, add the entry below. Like I said, I saw people using variations of this command, but this is the one that worked for me.
 
-<code-sample code="menuentry 'Remix OS' --class android-x86 {
+<pre id="code"><code class="language-javascript">menuentry 'Remix OS' --class android-x86 {
         insmod part_gpt
         search --file --no-floppy --set=root /remix/system.img
         linux /remix/kernel root=/dev/ram0 androidboot.hardware=remix_x86_64 androidboot.selinux=permissive CMDLINE
         initrd /remix/initrd.img
-}" lang="js"></code-sample>
+}" lang="js"></code></pre>
 
 The file where you can alter how much time is given to interact with the grub2 menu can be changed in the file below.
 
-<code-sample code="sudo nano /etc/default/grub" lang="js"></code-sample>
+<pre id="code"><code class="language-javascript">sudo nano /etc/default/grub" lang="js"></code></pre>
 
 I change the HIDDEN_TIMEOUT to 10, I thought that might've affected my ability to see it or not, in any case, it's an important grub2 config file, so I thought I'd mention it.
 
 After changing the grub2 settings, you need to update grub.
 
-<code-sample code="sudo update grub" lang="js"></code-sample>
+<pre id="code"><code class="language-javascript">sudo update grub</code></pre>
 
 I couldn't get my grub2 menu to come up automatically, it was necessary for me to trigger it with the escape key (I read that the shift key is supposed to trigger it as well, which didn't work for me).
 

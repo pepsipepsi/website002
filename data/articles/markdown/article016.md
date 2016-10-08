@@ -22,11 +22,12 @@ Consider the example below, which instantiates a shadow element and loads a sent
 
 Note, this doesn't work in Firefox unless you import the webcomponents.js library, which is a "suite of polyfils for browsers that don't support web-elements" (Firefox has depreciated the createShadowRoot function in favor of the v1 equivalent, which it doesn't support yet). 
 
-<code-sample code="&lt;div id=&ldquo;normal&rdquo;&gt;There is some content here&lt;/div&gt;
+<pre id="code"><code class="language-javascript">&lt;div id=&ldquo;normal&rdquo;&gt;There is some content here&lt;/div&gt;
+
 &lt;script&gt;
   var shadowElement = document.querySelector('#normal').createShadowRoot();
   shadowElement.innerHTML = &ldquo;but it gets replaced by the shadow element markup&rdquo;;
-&lt;/script&gt;" lang="js"></code-sample>
+&lt;/script&gt;" lang="js"></code></pre>
 
 Understand that the shadowElement node could basically be an entire node-tree with a whole other web-page which is completely separate from the outer dom that surrounds the div with the id of "normal". The concept behind shadow-dom is comparable to an iframe.
 

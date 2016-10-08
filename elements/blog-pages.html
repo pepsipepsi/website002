@@ -1,7 +1,6 @@
-<link rel="import" href="../bower_components/app-route/app-route.html">
-<link rel="stylesheet" type="text/css" href="../bower_components/materialize/bin/materialize.css">
-<script src="../bower_components/materialize/bin/materialize.js"></script>
 
+
+<link rel="import" href="../bower_components/app-route/app-route.html">
 <link rel="import" href="header-image.html">
 <link rel="import" href="article-title.html">
 <link rel="import" href="markdown-page.html">
@@ -20,7 +19,7 @@
     #spacer {
         background-color: transparent;
         width: 100%;
-        height: 565px;
+        height: 530px;
     }
 
 </style>
@@ -34,11 +33,11 @@
         post="{{postsData.slug}}"
         active="{{postsActive}}"></article-title>
 
-        <header-image
-            post="{{postsData.slug}}"
-            active="{{postsActive}}"></header-image> 
+    <header-image
+        post="{{postsData.slug}}"
+        active="{{postsActive}}"></header-image> 
 
-        <div id="spacer"></div>    
+    <div id="spacer"></div>    
 
     <markdown-page
         post="{{postsData.slug}}"
