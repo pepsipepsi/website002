@@ -33,7 +33,6 @@
         #code {
             padding: 20px 60px;
             margin: 0px 50px;
-            background: rgb(45, 45, 45);
             border-radius: .8em;   
             border-width: 0 5px 5px 0;
             border-color: #000;
@@ -52,7 +51,7 @@
 		<div class="markdown-html"></div>
 		</marked-element>
         <script src="../bower_components/prism/prism.js" type="text/javascript"></script>  
-        <link rel="stylesheet" href="../bower_components/prism-themes/themes/prism-pojoaque.css">
+        <link rel="stylesheet" href="../bower_components/prism-themes/themes/prism-hopscotch.css">
         </div>
 
     </template>
@@ -79,6 +78,13 @@
 
             '_computeURL': function(post) {
                 return `data/articles/markdown/${post}.md`;
+            },
+
+            ready: function() {
+                console.log('about to call highlightAll');
+                setTimeout(() => {
+                    Prism.highlightAll();
+                }, 2000);
             }
             
         });
