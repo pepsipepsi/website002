@@ -30,7 +30,7 @@
 		<div spacer></div>
 		<div spacer></div>
 		</app-toolbar>
-
+<!-- fadeInUp -->
         <iron-ajax
           auto
           url="[[_computeURL()]]"
@@ -41,9 +41,6 @@
 <!--         
          <img src="[[postContent.img]]" alt="[[postContent.img_alt]]" />
 -->                      
-    <script>
-
-    </script>
     </template>
 
     <script>
@@ -71,9 +68,13 @@
             },
 
             '_getTitle': function(content, post) {
-              //animate(".my-image", 'fadeIn');
             	console.log('the title is ' + content[post].title);
-                return content[post].title;
+              animateSlow(".article-title", 'fadeInUp');
+              animateMedium(".my-image", 'fadeIn');
+              setTimeout(() => {
+                  Prism.highlightAll();
+              }, 2000);              
+              return content[post].title;
             }                   
         });
     </script>
