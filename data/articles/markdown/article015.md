@@ -32,13 +32,13 @@ z=c-b
 this.u(a,b,this.gi(a)-z,a,c)
 this.si(a,this.gi(a)-z)},
 u:['aM',function(a,b,c,d,e){var z,y,x
-P.an(b,c,this.gi(a),null,null,null)" lang="js"></code></pre>
+P.an(b,c,this.gi(a),null,null,null)</code></pre>
 
 Not only that, but your html is going to have about 50 script tags at the top of the body, some of which are just empty.
 
 <pre id="code"><code class="language-javascript">&lt;script&gt;
 // This empty script tag is necessary to work around dartbug.com/19650
-&lt;/script&gt;" lang="js"></code></pre>
+&lt;/script&gt;</code></pre>
 
 For me, that's a big loss - it's important to be able to recognize your code after the build process and Dart loses a lot of its usefulness when it's compiled to javascript in the end anyway.
 

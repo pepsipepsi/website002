@@ -2,19 +2,19 @@
 	"article003": 
 	{
 		"title": "First Post",
-		"img": "images/post3.jpeg",
+		"img": "images/old_car01.jpg",
 		"img_alt": "The third post image"
 	},	
 	"article006":
 	{
 		"title": "CSS Centering Techniques",
-		"img": "images/post4.jpeg",
+		"img": "images/clouds.jpg",
 		"img_alt": "The fourth post image"
 	},
 	"article007":
 	{
 		"title": "ES6 Overview",
-		"img": "images/post5.jpeg",
+		"img": "images/city.jpg",
 		"img_alt": "The fifth post image"
 	},
 	"article008":
@@ -32,7 +32,7 @@
 	"article010":
 	{
 		"title": "ES6 Templates",
-		"img": "images/post8.jpeg",
+		"img": "images/old_car02.jpg",
 		"img_alt": "The eighth post image"
 	},
 	"article011":
@@ -50,7 +50,7 @@
 	"article013":
 	{
 		"title": "The JavaFX Platform",
-		"img": "images/bg4.jpg",
+		"img": "images/invention.jpg",
 		"img_alt": "The eleventh post image"
 	},
 	"article014":

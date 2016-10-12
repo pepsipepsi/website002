@@ -68,12 +68,15 @@
           handle-as="text"
           loading="{{loading}}"
           last-response="{{postContent}}"></iron-ajax>
-        <div id=content>
-		<marked-element markdown=[[postContent]]>
-		<div class="markdown-html"></div>
-		</marked-element>
-        <script src="../bower_components/prism/prism.js" type="text/javascript"></script>  
-        <link rel="stylesheet" href="../bower_components/prism-themes/themes/prism-hopscotch.css">
+
+        <div class="container">  
+            <div id=content>
+    		<marked-element markdown=[[postContent]]>
+    		<div class="markdown-html"></div>
+    		</marked-element>
+            <script src="../bower_components/prism/prism.js" type="text/javascript"></script>  
+            <link rel="stylesheet" href="../bower_components/prism-themes/themes/prism-hopscotch.css">
+            </div>
         </div>
 
     </template>
